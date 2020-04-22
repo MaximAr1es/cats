@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 define(ROOT, $_SERVER['DOCUMENT_ROOT']);
 
 
@@ -41,14 +42,22 @@ function register($pdo, $id){
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <video class="video" preload="auto" autoplay="autoplay"
-    loop="loop" poster="media/cats.jpg">
-        <source src="media/cats.mp4" type="video/mp4"></source>
-    </video>
-    <div class="peoples">
-    <p class="amount">Количество посещений = </p><p class="value"><?php print $id;?></p><br>
-    <a target="_blank" class="copyright" href="https://vk.com/ar1es_dx1y">&copy;Максим</a>
+    <div class="block-audio">
+	    <audio class="audio" controls autoplay="autoplay" loop="loop" preload="auto">
+            <source src="media/cats.mp3" type="audio/mpeg">
+        </audio>
+	    <p class="audio">Если ты юзаешь iOS и музыка не включилась, то включи её сам. :)</p>
+	</div>
+    <div class="block-video">
+        <video class="video" id="vid" preload="auto" muted playsinline autoplay="autoplay" loop="loop" poster="media/cats.jpg">
+		    <source src="media/cats.mp4" type='video/mp4'>
+        </video>
+	</div>
+    <div class="footer">
+        <p class="amount">Количество посещений = </p><p class="value"><?php print $id;?></p><br>
+        <a target="_blank" class="copyright" href="https://vk.com/ar1es_dx1y">&copy;Максим</a>
     </div>
+	
 </body>
 </html>
 
